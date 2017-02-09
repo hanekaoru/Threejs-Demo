@@ -61,3 +61,41 @@ var scene = new THREE.Scene();
 场景是所有物体的容器，如果要显示一个苹果，就需要将苹果对象加入场景中
 
 
+## 2. 相机
+
+相机决定了场景中那个角度的景色会显示出来。相机就像人的眼睛一样，人站在不同位置，抬头或者低头都能够看到不同的景色
+
+在 ```Threejs``` 中有多种相机，这里介绍两种，它们是：
+
+* 正投影相机 ```THREE.OrthographicCamera``` 
+
+* 透视投影相机 ```THREE.PerspectiveCamera```
+
+定义方式如下：（具体参数后面会涉及到）
+
+```js
+// 透视相机（THREE.PerspectiveCamera）
+var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+```
+
+
+## 3. 渲染器
+
+渲染器决定了渲染的结果应该画在页面的什么元素上面，并且以怎样的方式来绘制，定义方式如下：
+
+```js
+var renderer = new THREE.WebGLRenderer();
+
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+```
+
+注意，渲染器 renderer 的 domElement 元素，表示渲染器中的画布，所有的渲染都是画在 domElement 上的，所以这里的 appendChild 表示将这个 domElement 挂接在 body 下面，这样渲染的结果就能够在页面中显示了
+
+
+待续...
+
+
+
+
+
